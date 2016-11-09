@@ -215,7 +215,7 @@ class CasinoFrame extends JFrame
       final int BAR_THRESH = (int) (RAND_SCALER * BAR_RATE);
       final int CHERRY_THRESH = (int) (RAND_SCALER * CHERRY_RATE) + BAR_THRESH;
       final int SPACE_THRESH = (int) (RAND_SCALER * SPACE_RATE) + CHERRY_THRESH;
-      // SEV_THRESH not needed for the sole remaining case of SEVEN_STR                     // COMMENT OK?
+      // SEV_THRESH not needed for the sole remaining case of SEVEN_STR
       
       // Generates [0, RAND_SCALER - 1] for randNumber
       int randNumber = (int) (RAND_SCALER * Math.random());
