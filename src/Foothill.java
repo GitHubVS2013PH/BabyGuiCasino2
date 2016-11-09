@@ -70,8 +70,8 @@ class CasinoFrame extends JFrame
    static final ImageIcon CH_IMG = new ImageIcon("cherry.jpg");
    static final ImageIcon SPC_IMG = new ImageIcon("space.jpg");
    static final ImageIcon DEFAULT_IMG = BAR_IMG;
-   static final File soundFileLost = new File("EXPLODE.wav");
-   static final File soundFileWon = new File("CASHREG.wav");
+   static final File SOUND_FILE_LOST = new File("EXPLODE.wav");
+   static final File SOUND_FILE_WON = new File("CASHREG.wav");
    
    // CasinoFrame constructor
    public CasinoFrame(String title)
@@ -254,13 +254,13 @@ class CasinoFrame extends JFrame
          int multiplier = getPayMultiplier(pullString);
          if (multiplier == 0)
          {
-            playSound(soundFileLost);
+            playSound(SOUND_FILE_LOST);
             winnings -= bet;
             lblUserMsg.setText("Sorry, you lose");      
          }
          else
          {
-            playSound(soundFileWon);
+            playSound(SOUND_FILE_WON);
             int amountWon = multiplier * bet;
             winnings += amountWon;
             lblUserMsg.setText("You won $" +  amountWon + " !");                  
