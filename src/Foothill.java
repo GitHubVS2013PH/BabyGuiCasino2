@@ -22,7 +22,7 @@ public class Foothill
       myCasinoFrame.setVisible(true);
    }
 }
-
+                                                      // TODO: dereference methods by class
 // CasinoFrame class is derived from JFrame class
 class CasinoFrame extends JFrame
 {
@@ -143,7 +143,7 @@ class CasinoFrame extends JFrame
       panelBottom.add( new JLabel("")); // pad button on right to center
 
       // instantiate and register listener for both button and bet text field
-      CasinoListener myListener = new CasinoListener();
+      CasinoListener myListener = new CasinoFrame.CasinoListener();
       btnMyButton.addActionListener( myListener );
       txtMyTextArea.addActionListener( myListener );
 
@@ -274,7 +274,7 @@ class CasinoFrame extends JFrame
        * if input is not a valid number or out of range, otherwise returns bet.
        * @return specified int
        */
-      public int getBet()
+      int getBet()
       {
          String currBet = txtMyTextArea.getText();
          try
@@ -302,7 +302,7 @@ class CasinoFrame extends JFrame
        * @param str selects the correct ImageIcon to return
        * @return the specified ImageIcon
        */
-      public ImageIcon getSymbolImg(String str)
+      private ImageIcon getSymbolImg(String str)
       {
          if (str.equals(BAR_STR))
             return BAR_IMG;
@@ -313,7 +313,11 @@ class CasinoFrame extends JFrame
          return SEV_IMG; 
       } // end getSymbolImg
       
-      public void playSound(File sound)
+      /**
+       * Plays File sound asynchronously
+       * @param sound File with path to playable file such as .wav 
+       */
+      private void playSound(File sound)
       {
          // code for this method modified from:
          // www.ntu.edu.sg/home/ehchua/programming/java/J8c_PlayingSound.html
@@ -379,7 +383,7 @@ class TripleString
    // mutators
    boolean setString1( String str )
    {
-      if (!validString(str))
+      if (!TripleString.validString(str))
          return false;
       string1 = str;
       return true;
@@ -387,7 +391,7 @@ class TripleString
    
    boolean setString2( String str )
    {
-      if (!validString(str))
+      if (!TripleString.validString(str))
          return false;
       string2 = str;
       return true;
@@ -395,7 +399,7 @@ class TripleString
    
    boolean setString3( String str )
    {
-      if (!validString(str))
+      if (!TripleString.validString(str))
          return false;
       string3 = str;
       return true;
