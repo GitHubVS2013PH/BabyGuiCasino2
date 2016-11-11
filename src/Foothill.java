@@ -274,7 +274,7 @@ class CasinoFrame extends JFrame
        * if input is not a valid number or out of range, otherwise returns bet.
        * @return specified int
        */
-      int getBet()
+      private int getBet()
       {
          String currBet = txtMyTextArea.getText();
          try
